@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Src\core\database\MysqliFactory: ~
+
+    Src\core\database\MysqlDatabase:
+        factory: ['@Src\core\database\MysqliFactory', 'createMysqli']
+        arguments:
+            $host: '%env(DB_HOST)%'
+            $user: '%env(DB_USER)%'
+            $pass: '%env(DB_PASS)%'
+            $dbname: '%env(DB_NAME)%'

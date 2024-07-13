@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Wane Boutique Dashboard</title>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class=" md:flex flex-col w-64 bg-red-500">
+            <div class="flex items-center justify-center h-16 bg-gray-400 ">
+                <span class="text-white font-bold ">Wane Boutique</span>
+            </div>
+            <nav class="flex-1 px-2 py-4 bg-red-500 overflow-y-auto">
+                <a href="#" class="flex items-center px-4 py-2 text-gray-100 hover:bg-red-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                    </svg>
+                    Baby Sitters
+                </a>
+                <!-- Add other navigation items here -->
+            </nav>
+        </aside>
+        <!-- Main content -->
+        <main class="flex flex-col flex-1 overflow-y-auto">
+            <!-- Header -->
+            <header class="flex items-center justify-between h-16 bg-white border-b border-gray-200  p-6">
+                <div class="flex items-center">
+                    <button class="text-gray-500 focus:outline-none focus:text-gray-700 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <input class="mx-4 w-full border rounded-md px-4 py-2" type="text" placeholder="Search">
+                </div>
+                <div class="flex items-center">
+                    <img src="https://img.freepik.com/photos-premium/confiance-femme-noire-brille-elegance-capturant-attention-concept-beaute_975188-10002.jpg" alt="User" class="w-12 h-12 rounded-full">
+                </div>
+            </header>
+
+            <div class="bg-white rounded-lg shadow-lg w-[85%] mx-auto mt-8 ">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold">Client: Ibrahima Diallo</h2>
+                        <p class="text-black font-bold">Téléphone: +221 785619115</p>
+                    </div>
+                    
+                    <p class="mb-2">Status:</p>
+                
+                        <select name="choix" id="choix" class="bg-gray-200 p-2 mb-4 rounded">
+                            <option value="restant">Restant</option>
+                            <option value="solde">Soldé</option>
+                        </select>
+                     <!-- Ajout du filtre par date -->
+                     <div class="flex items-center mb-4">
+                        <label for="dateFilter" class="mr-2">Filtrer par date :</label>
+                        <input id="dateFilter" name="dateFilter" type="date" class="bg-gray-200 p-2 rounded-md">
+                    </div>
+                    
+                    <table class="w-full bg-gray-100 rounded-lg overflow-hidden">
+                        <thead class="bg-gray-200 text-gray-700">
+                            <tr>
+                                <th class="p-3 text-left">DATE</th>
+                                <th class="p-3 text-left">MONTANT</th>
+                                <th class="p-3 text-left">RESTANT</th>
+                                <th class="p-3 text-left">PAIEMENT</th>
+                                <th class="p-3 text-left">LIST-PAIEMENT</th>
+                                <th class="p-3 text-left">ARTICLES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-3">2024-07-06</td>
+                                <td class="p-3">90$</td>
+                                <td class="p-3">68$</td>
+                                <td class="p-3"><button class="bg-red-400 text-white px-3 py-1 rounded">PAYER</button></td>
+                                <td class="p-3"><button class="bg-red-400 text-white px-3 py-1 rounded">LIST</button></td>
+                                <td class="p-3"><button class="bg-red-400 text-white px-3 py-1 rounded">VIEWS</button></td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-3">2024-07-08</td>
+                                <td class="p-3">15$</td>
+                                <td class="p-3">13$</td>
+                                <td class="p-3"><button class="bg-red-400 text-white px-3 py-1 rounded">PAYER</button></td>
+                                <td class="p-3"><button class="bg-red-400 text-white px-3 py-1 rounded">LIST</button></td>
+                                <td class="p-3"><button class="bg-red-400 text-white px-3 py-1 rounded">VIEWS</button></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3"></td>
+                                <td class="p-3"></td>
+                                <td class="p-3"></td>
+                                <td class="p-3"><button class="bg-red-400 text-white px-3 py-1 rounded">PAYER</button></td>
+                                <td class="p-3"><button class="bg-red-400 text-white px-3 py-1 rounded">LIST</button></td>
+                                <td class="p-3"><button class="bg-red-400 text-white px-3 py-1 rounded">VIEWS</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="flex justify-between mt-4">
+                        <button class="bg-gray-500 text-white px-4 py-2 rounded">Précédent</button>
+                        <span class="text-gray-600">Page 1 de 10</span>
+                        <button class="bg-gray-500 text-white px-4 py-2 rounded">Suivant</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Wane Boutique Dashboard</title>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class=" md:flex flex-col w-64 bg-red-500">
+            <div class="flex items-center justify-center h-16 bg-gray-400 ">
+                <span class="text-white font-bold ">Wane Boutique</span>
+            </div>
+            <nav class="flex-1 px-2 py-4 bg-red-500 overflow-y-auto">
+                <a href="#" class="flex items-center px-4 py-2 text-gray-100 hover:bg-red-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                    </svg>
+                    Baby Sitters
+                </a>
+                <!-- Add other navigation items here -->
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="flex flex-col flex-1 overflow-y-auto">
+            <!-- Header -->
+            <header class="flex items-center justify-between h-16 bg-white border-b border-gray-200  p-6">
+                <div class="flex items-center">
+                    <button class="text-gray-500 focus:outline-none focus:text-gray-700 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <input class="mx-4 w-full border rounded-md px-4 py-2" type="text" placeholder="Search">
+                </div>
+                <div class="flex items-center">
+                    <img src="https://img.freepik.com/photos-premium/confiance-femme-noire-brille-elegance-capturant-attention-concept-beaute_975188-10002.jpg" alt="User" class="w-12 h-12 rounded-full">
+                </div>
+            </header>
+
+            <!-- Dashboard content -->
+            <div class="flex justify-center items-center flex-grow p-12 mb-[20%]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-7xl">
+                    <!-- Nouveau Client Form -->
+                    <section class="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold mb-4">Nouveau Client</h2>
+                        <form>
+                            <div class="mb-4">
+                                <label for="nom" class="block text-gray-700">Nom</label>
+                                <input type="text" id="nom" class="mt-2 p-2 border border-gray-300 rounded w-full">
+                            </div>
+                            <div class="mb-4">
+                                <label for="prenom" class="block text-gray-700">Prenom</label>
+                                <input type="text" id="prenom" class="mt-2 p-2 border border-gray-300  rounded w-full">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700">Email</label>
+                                <input type="email" id="email" class="mt-2 p-2 border border-gray-300  rounded w-full">
+                            </div>
+                            <div class="mb-4">
+                                <label for="telephone" class="block text-gray-700">Telephone</label>
+                                <input type="tel" id="telephone" class="mt-2 p-2 border border-gray-300  rounded w-full">
+                            </div>
+                            <div class="mb-4">
+                                <label for="photo" class="block text-gray-700">Photo</label>
+                                <input type="file" id="photo" class="mt-2 p-2 border border-gray-300  rounded w-full">
+                            </div>
+                            <!-- Add other form fields here -->
+                            <div class="text-right">
+                                <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded">ENREGISTRER</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Suivre Dette -->
+                    <section class="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold mb-4">Suivre dette</h2>
+                        <div class="mb-4">
+                            <label for="tel" class="block text-gray-700">Tel</label>
+                            <div class="flex">
+                                <input type="text" id="tel" class="mt-2 p-2 border border-gray-300 rounded-l w-full">
+                                <button class="bg-red-500 text-white w-10 mt-2 h-10 ml-4 rounded-full ">OK</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <img src="https://st.depositphotos.com/2325841/2529/i/450/depositphotos_25290023-stock-photo-african-beauty.jpg" alt="Client Photo" class="w-20 h-20 rounded-full mr-4">
+                            <div>
+                                <p class="text-gray-700"><span class="font-bold">Nom :</span> <span id="client-nom"></span></p>
+                                <p class="text-gray-700"><span class="font-bold">Prenom :</span> <span id="client-prenom"></span></p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700"><span class="font-bold">Total dettes :</span> <span id="total-dettes"></span></p>
+                            <p class="text-gray-700"><span class="font-bold">Montant versé :</span> <span id="montant-verse"></span></p>
+                            <p class="text-gray-700"><span class="font-bold">Montant restant :</span> <span id="montant-restant"></span></p>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button class="bg-red-500 text-white py-2 px-4 rounded">+ Nouvelle</button>
+                            <button class="bg-red-500 text-white py-2 px-4 rounded">Dette</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
